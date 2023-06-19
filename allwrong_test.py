@@ -1,8 +1,8 @@
 import pytest
+import allwrong as aw
 
-def getWrongAnswers(N: int, C: str) -> str:
-    # Write your code here
-    C = C.replace('A','*')
-    C = C.replace('B','A')
-    C = C.replace('*','B')
-    return C
+def test_getWrongAnswers(inputn, inputc, output):
+    assert aw.getWrongAnswers(inputn, inputc) == output
+
+test_getWrongAnswers(2, 'ABA', 'BAB')
+test_getWrongAnswers(2, 'BBBBB', 'AAAAA')
